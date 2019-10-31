@@ -44,7 +44,7 @@ public class LoadingFirebase extends AppCompatActivity {
                 String b = "18MCA045";
                 WifiManager wifiMgr = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
                 WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
-                 @SuppressLint("HardwareIds") final String mac_address = wifiInfo.getMacAddress();
+                @SuppressLint("HardwareIds") final String mac_address = wifiInfo.getMacAddress();
                 reff = FirebaseDatabase.getInstance().getReference().child(a).child(b);
 
                 reff.addValueEventListener(new ValueEventListener() {
@@ -56,11 +56,11 @@ public class LoadingFirebase extends AppCompatActivity {
                         String newmac = dataSnapshot.child("mac").getValue().toString();
 
                         String mac_db = newmac;
-                        Log.v("DB name",name);
-                        Log.v("MOBILE MAC",mac_address);
-                        Log.v("DB MAC",mac);
+                        Log.v("DB name", name);
+                        Log.v("MOBILE MAC", mac_address);
+                        Log.v("DB MAC", mac);
 
-                        if ( mac_address .equals(mac_db)) {
+                        if (mac_address.equals(mac_db)) {
                             sname.setText(name);
                             smac.setText(mac);
                             reff.child("attendance").setValue("Marked");

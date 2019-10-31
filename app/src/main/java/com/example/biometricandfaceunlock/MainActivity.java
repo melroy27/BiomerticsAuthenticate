@@ -56,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
 
 //Print a message to Logcat//
-                 Toast.makeText(context,"Authenticated",Toast.LENGTH_LONG).show();
+
                 Intent i = new Intent(getApplicationContext(), LoadingFirebase.class);
+               // Toast.makeText(MainActivity.this,"Authenticated",Toast.LENGTH_LONG).show();
                 startActivity(i);
                 Log.d(TAG, "Fingerprint recognised successfully");
             }
